@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from "react-router-dom";
-import Login from './components/Login';
+import LoginForm from './components/LoginForm';
 import FriendsList from './components/FriendsList';
 import './App.css';
 
@@ -20,8 +20,8 @@ function App() {
       </header>
       <Switch>
         <FriendsList exact path="/friendslist" component={FriendsList} />
-        <Route path="/login" component={Login} />
-        <Route component={Login} />
+        <Route path="/login" component={LoginForm} />
+        <Route component={LoginForm} />
       </Switch>
     </div>
   );
