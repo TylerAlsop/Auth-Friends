@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AddFriendForm from './AddFriendForm';
 import FriendCard from './FriendCard';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
@@ -18,8 +19,7 @@ const FriendsList = () => {
     return(
         <div className="friends-list-component">
             <div className="add-friend">
-                
-
+                <AddFriendForm />
             </div>
             <div className="friends-list">
                 {allFriends.map(friend => (
