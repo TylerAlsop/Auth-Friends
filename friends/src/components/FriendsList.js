@@ -16,14 +16,31 @@ const FriendsList = () => {
     }, [])
 
     return(
-        <div className="friends-list">
-            {allFriends.map(friend => (
-                <FriendCard
-                    key={friend.id}
-                    friend={friend} />
-            ))}
+        <div className="friends-list-component">
+            <div className="add-friend">
+                
+
+            </div>
+            <div className="friends-list">
+                {allFriends.map(friend => (
+                    <FriendCard
+                        key={friend.id}
+                        friend={friend} />
+                ))}
+            </div>
         </div>
     )
 };
 
 export default FriendsList;
+
+
+
+//////////////////  For Adding A Loding Icon Later  //////////////////
+
+// {this.props.fetchingData && (
+//     <div className="key spinner">
+//       <Loader type="Puff" color="#204963" height="60" width="60" />
+//       <p>Loading Data</p>
+//     </div>
+//   )}

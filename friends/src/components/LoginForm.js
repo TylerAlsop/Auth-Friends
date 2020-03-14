@@ -26,7 +26,7 @@ const LoginForm = () => {
         .then(res => {
             console.log("Login Response", res);
             localStorage.setItem("token", res.data.payload);
-            // props.history.push("/friends");
+            // props.history.push("/friendslist");
         })
         .catch(err => {
             console.log("Login Error", err);
