@@ -4,22 +4,23 @@ import FriendCard from './FriendCard';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 const FriendsList = () => {
-    const [allFriends, setAllFriends] = useState([])
+    const [allFriends, setAllFriends] = useState([]);
+    const [friendAdded, setFriendAdded] = useState(false);
 
     useEffect(() => {
         axiosWithAuth()
-            .get("/friends")
+            .get("/api/friends")
             .then(res => {
                 console.log("Res for List of Friends", res);
                 setAllFriends(res.data);
             })
             .catch()
-    }, [])
+    }, [friendAdded])
 
     return(
         <div className="friends-list-component">
             <div className="add-friend">
-                <AddFriendForm />
+                <AddFriendForm setFriendAdded={setFriendAdded} />
             </div>
             <div className="friends-list">
                 {allFriends.map(friend => (

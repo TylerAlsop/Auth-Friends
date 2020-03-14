@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+
     const [credentials, setCredentials] = useState(
         {
         username: "",
@@ -22,16 +23,17 @@ const LoginForm = () => {
         e.preventDefault();
 
         axiosWithAuth()
-        .post("/login", credentials)
+        .post("/api/login", credentials)
         .then(res => {
             console.log("Login Response", res);
             localStorage.setItem("token", res.data.payload);
-            // props.history.push("/friendslist");
+            props.history.push("/api/friends");
         })
         .catch(err => {
             console.log("Login Error", err);
         });
     };
+
 
     return (
         <div>

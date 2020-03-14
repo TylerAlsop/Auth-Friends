@@ -12,17 +12,16 @@ function App() {
       <header className="App-header">
         <ul>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/api/login">Login</Link>
           </li>
           <li>
-            <Link to="/friendslist">List of Friends</Link>
+            <Link to="/api/friends">List of Friends</Link>
           </li>
         </ul>
       </header>
       <Switch>
-        <PrivateRoute exact path="/friendslist" component={FriendsList} />
-        <Route path="/login" component={LoginForm} />
-        <Route component={LoginForm} />
+        <PrivateRoute exact path="/api/friends" component={FriendsList} />
+        <Route path="/api/login" component={LoginForm} />
       </Switch>
     </div>
   );

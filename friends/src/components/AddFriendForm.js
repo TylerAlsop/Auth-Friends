@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
-const AddFriendForm = () => {
+const AddFriendForm = (props) => {
     const [friend, setFriend] = useState(
         {
             id: "",
@@ -19,14 +19,17 @@ const AddFriendForm = () => {
       };
 
     const submitHandler = e => {
-    axiosWithAuth
-        .post("/friendslist", friend)
-        .then(res => {
-        console.log("Post res in submitHandler", res);
-        })
-        .catch(err => {
-        console.log("Error with POST", err);
-        })
+        e.preventDefault();
+        axiosWithAuth()
+            .post("/api/friends", friend)
+            .then(res => {
+                props.setFriendAdded(true)
+                console.log("Post res in submitHandler", res);
+            })
+            .catch(err => {
+            console.log("Error with POST", err);
+            })
+        props.setFriendAdded(false);
     };
 
     return (
