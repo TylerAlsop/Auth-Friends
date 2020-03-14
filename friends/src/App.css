@@ -17,15 +17,24 @@
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
+}
+
+#link {
+  color: white;
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
@@ -40,5 +49,37 @@
 .friends-list-component {
   display: flex;
   flex-direction: row;
+  /* align-self: center; */
+  max-width: 90vw;
   margin: auto;
+}
+
+.add-friend-form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+.friends-list {
+  width: 40vw;
+
+}
+
+#input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.submit-button {
+  width: 25%;
+  align-self: center;
+}
+
+.friend-card {
+  border: solid gray 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px gray;
+  border-radius: 15px;
 }

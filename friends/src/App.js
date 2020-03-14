@@ -10,14 +10,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ul>
-          <li>
-            <Link to="/api/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/api/friends">List of Friends</Link>
-          </li>
-        </ul>
+            <Link id="link" to="/api/login">Login</Link>
+            <Link id="link" to="/api/friends">List of Friends</Link>
       </header>
       <Switch>
         <PrivateRoute exact path="/api/friends" component={FriendsList} />
